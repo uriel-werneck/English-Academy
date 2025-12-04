@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<ul>
+    {% for class in classes %}
+        <li><a href="{% url 'class_by_id' class.id %}">{{ class.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

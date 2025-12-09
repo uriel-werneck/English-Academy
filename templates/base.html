@@ -5,13 +5,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{% block title %}{% endblock %}</title>
+        <title>{% block title %}English Academy{% endblock %}</title>
         <link rel="stylesheet" href="{% static 'accounts/styles.css' %}">
     </head>
     <body>
         {% block navbar %}
         <nav>
-            Navbar
+            <ul>
+                <li><a href="{% url 'classes' %}">Classes</a></li>
+            </ul>
         </nav>
         <hr>
         {% endblock %}

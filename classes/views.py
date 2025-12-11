@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import SchoolClass
 
 
@@ -16,3 +16,13 @@ def class_by_id(request, pk):
     filtered_class = SchoolClass.objects.get(id=pk)
     context = {'class': filtered_class}
     return render(request, 'classes/class_by_id.html', context=context)
+
+def class_sheet(request, pk):
+    school_class = get_object_or_404(SchoolClass, pk=pk)
+    context = {}
+    context['school_class'] =  school_class
+
+    if request.method == 'POST':
+        pass
+
+    return render(request, 'classes/class_sheet.html', context=context)
